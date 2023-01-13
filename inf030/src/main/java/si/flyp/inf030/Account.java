@@ -4,11 +4,23 @@ public class Account {
     
     public String owner;
     public String iban;
-
     private double balance;
 
-    public Account(String owner) {
+    public String getOwner() {
+        return owner;
+    }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public Account(String owner, String iban) {
         this.owner = owner;
+        this.iban = iban;
     }
 
     public void deposit(double value) {

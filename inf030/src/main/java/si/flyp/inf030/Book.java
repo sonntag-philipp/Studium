@@ -11,41 +11,41 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
     
     public String getTitle() {
         return title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getAuthor() {
         return author;
     }
 
+    public void setReleaseYear(String releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
     public String getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(String releaseYear) {
-        this.releaseYear = releaseYear;
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 
     public int getPages() {
         return pages;
     }
 
-    public void setPages(int pages) {
-        this.pages = pages;
+    public void setPrice(double price) {
+        this.price = price;
     }
     
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public void publish() {
