@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class TestExercise07_04 {
     
     @Test
-    void TestAccount_DagobertDuck_WithdrawalOutOfLimitsThrowsException() {
+    void Account_DagobertDuck_WithdrawalOutOfLimitsThrowsException() {
         Account account = new Account("Dagobert Duck", "KW77YZCQ2465324985213271278495");
 
         account.deposit(300000);
@@ -16,7 +16,7 @@ public class TestExercise07_04 {
     }
     
     @Test
-    void TestAccount_DagobertDuck_CorrectNameIsSaved() {
+    void Account_DagobertDuck_CorrectNameIsSaved() {
         String name = "Dagobert Duck";
 
         Account account = new Account(name, "KW77YZCQ2465324985213271278495");
@@ -25,7 +25,7 @@ public class TestExercise07_04 {
     }
     
     @Test
-    void TestAccount_DonaldDuck_BalanceIsCorrect() {
+    void Account_DonaldDuck_BalanceIsCorrect() {
         String name = "Dagobert Duck";
 
         Account account = new Account(name, "KW77YZCQ2465324985213271278495");
@@ -36,7 +36,7 @@ public class TestExercise07_04 {
     }
     
     @Test
-    void TestAccount_DonaldDuck_CorrectIbanIsSaved() {
+    void Account_DonaldDuck_CorrectIbanIsSaved() {
         String iban = "KW77YZCQ2465324985213271278495";
 
         Account account = new Account("Dagobert Duck", iban);
