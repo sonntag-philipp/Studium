@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.junit.jupiter.api.Test;
 
 public class TestExercise07_01 {
-    
+
     @Test
     void SimpleNumberArray_IsSorted() {
         int[] numbers = { 1, 9, 3, 8, 10 };

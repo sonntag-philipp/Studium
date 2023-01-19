@@ -19,7 +19,7 @@ public class Exercise07_01 {
     public static void printArray(String name, int[] array) {
         System.out.print(name + ": [");
         for (int item : array) {
-            System.err.print(" " + item + " ");
+            System.out.print(" " + item + " ");
         }
         System.out.println("]");
     }
@@ -32,23 +32,23 @@ public class Exercise07_01 {
         quickSort(array, 0, array.length - 1);
     }
 
-    private static void quickSort(int[] values, int lowerIndex, int upperIndex) {
+    private static void quickSort(int[] values, int leftIndex, int rightIndex) {
         // Abbruchbedingung der Rekursion. Wenn der Index der unteren Grenze größer als der
         // Index der oberen Grenze ist, dann ist die Liste sortiert.
-        if (upperIndex < lowerIndex) {
+        if (rightIndex < leftIndex) {
             return;
         }
 
-        int pivotValue = values[upperIndex];
+        int pivotValue = values[rightIndex];
 
-        int i = lowerIndex;
-        int j = upperIndex - 1;
+        int i = leftIndex;
+        int j = rightIndex - 1;
 
         // Swapping eines Durchgangs. Linke und rechte Seite neben Pivot werden durchlaufen
         while(true) {
 
             // So lange hochzählen bis auf der linken Seite ein Element gefunden wurde, welches größer als das Pivot Element ist.
-            while (i < upperIndex && values[i] <= pivotValue) {
+            while (i < rightIndex && values[i] <= pivotValue) {
                 i++;
             }
 
@@ -68,11 +68,11 @@ public class Exercise07_01 {
 
         // Nimm das letzte Element und packe es an die richtige Stelle. Also Verschiebung des zu Anfang ausgewählten Pivot Elements an 
         // die richtige Stelle, damit alle Werte links kleiner und die rechte Seite größer ist.
-        swap(values, i, upperIndex);
+        swap(values, i, rightIndex);
 
         // Rekursiver Aufruf für die linke und rechte Seite neben dem verschobenen Pivot Element.
-        quickSort(values, lowerIndex, i - 1);
-        quickSort(values, i + 1, upperIndex);
+        quickSort(values, leftIndex, i - 1);
+        quickSort(values, i + 1, rightIndex);
     }
 
     /**

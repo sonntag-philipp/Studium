@@ -15,7 +15,7 @@ public class Exercise07_02 {
     public static void printArray(String name, int[] array) {
         System.out.print(name + ": [");
         for (int item : array) {
-            System.err.print(" " + item + " ");
+            System.out.print(" " + item + " ");
         }
         System.out.println("]");
     }
@@ -49,18 +49,18 @@ public class Exercise07_02 {
     private static int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length + right.length];
         
-        int lowerIndex = 0, upperIndex = 0, resultIndex = 0;
+        int leftIndex = 0, rightIndex = 0, resultIndex = 0;
 
         // right und left sind bereits sortiert.
-        while (lowerIndex < left.length && upperIndex < right.length) {
+        while (leftIndex < left.length && rightIndex < right.length) {
 
             // Wenn links kleiner ist als rechts, dann wird links als erstes in das Ergebnis geschrieben.
-            if (left[lowerIndex] < right[upperIndex]) {
-                result[resultIndex] = left[lowerIndex];
-                lowerIndex++;
+            if (left[leftIndex] < right[rightIndex]) {
+                result[resultIndex] = left[leftIndex];
+                leftIndex++;
             } else { // Wenn links größer ist als rechts, dann wird rechts als erstes in das Ergebnis geschrieben.
-                result[resultIndex] = right[upperIndex];
-                upperIndex++;
+                result[resultIndex] = right[rightIndex];
+                rightIndex++;
             }
             resultIndex++;
         }
@@ -68,16 +68,16 @@ public class Exercise07_02 {
         // Wenn eine der Seiten noch Elemente enthält, dann werden diese in das Ergebnis geschrieben.
 
         // Hier werden alle Elemente von links in das Ergebnis geschrieben.
-        while (lowerIndex < left.length) {
-            result[resultIndex] = left[lowerIndex];
-            lowerIndex++;
+        while (leftIndex < left.length) {
+            result[resultIndex] = left[leftIndex];
+            leftIndex++;
             resultIndex++;
         }
 
         // Hier werden alle Elemente von rechts in das Ergebnis geschrieben.
-        while (upperIndex < right.length) {
-            result[resultIndex] = right[upperIndex];
-            upperIndex++;
+        while (rightIndex < right.length) {
+            result[resultIndex] = right[rightIndex];
+            rightIndex++;
             resultIndex++;
         }
 
