@@ -33,4 +33,10 @@ public class Tutorium {
     public void addTeilnehmer(Teilnehmer teilnehmer) {
         teilnehmerListe.add(teilnehmer);
     }
+
+    public static Tutorium erstelleTutorium() {
+        // System.out.println(tutor.getName()); // Geht nicht, da tutor nur innerhalb einer Objektinstanz existiert.
+
+        return new Tutorium(new Tutor(), "Tutorium 1");
+    }
 }

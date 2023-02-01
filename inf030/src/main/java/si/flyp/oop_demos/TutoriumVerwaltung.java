@@ -32,18 +32,20 @@ public class TutoriumVerwaltung {
         // Setzen des Namens des Tutors von t2
         t2.getTutor().setName("Robin");
 
+        Tutorium t187 = Tutorium.erstelleTutorium();
+
         System.out.println("Name vor Bearbeitung: " + t2.getName());
 
         t2.setName("Tutorium - " + t2.getName());
 
         System.out.println("Name nach Bearbeitung: " + t2.getName());
 
-        t2.addTeilnehmer(new Teilnehmer("Max"));
-        t2.addTeilnehmer(new Teilnehmer("Moritz"));
-        t2.addTeilnehmer(new Teilnehmer("Marius"));
+        t2.addTeilnehmer(new Teilnehmer("Max", "123456781"));
+        t2.addTeilnehmer(new Teilnehmer("Moritz", "87654321"));
+        t2.addTeilnehmer(new Teilnehmer("Marius", "12345678"));
 
         for (Teilnehmer teilnehmer : t2.getTeilnehmerListe()) {
-            System.out.println("Teilnehmer: " + teilnehmer.getName());
+            System.out.println("Teilnehmer: " + teilnehmer.getName() + " - " + teilnehmer.getMatrikelNummer());
         }
     }
 }
